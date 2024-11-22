@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Car Price Predictor</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-group">
+                <label>Year:</label>
+                <input type="number" name="year" required min="1990" max="2023">
+            </div>
+
+            <div class="form-group">
+                <label>Kilometers Driven:</label>
+                <input type="number" name="km_driven" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label>Fuel Type:</label>
+                <select name="fuel" required>
+                    <option value="0">Petrol</option>
+                    <option value="1">Diesel</option>
+                    <option value="2">CNG</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Seller Type:</label>
+                <select name="seller_type" required>
+                    <option value="0">Individual</option>
+                    <option value="1">Dealer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Transmission:</label>
+                <select name="transmission" required>
+                    <option value="0">Manual</option>
+                    <option value="1">Automatic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Owner:</label>
+                <select name="owner" required>
+                    <option value="1">First Owner</option>
+                    <option value="2">Second Owner</option>
+                    <option value="3">Third Owner</option>
+                    <option value="4">Fourth & Above Owner</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+</body>
+
+</html>
